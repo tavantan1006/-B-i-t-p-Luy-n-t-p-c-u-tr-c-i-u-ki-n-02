@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</title>
+</head>
+<body>
+<label for="soPhut">Nhập số phút gọi trong tháng của gia đình bạn : </label><br><br>
+<input type="text" id="soPhut" onkeypress="tongtiencuocdienthoai()"> Phút<br>
+<p>Cước phí được tính = Số phút gọi * 1500 VNĐ/Phút</p>
+<br>
+<div id="ketqua"></div>
+</body>
+<script>
+  function tongtiencuocdienthoai(){
+    let soPhut = +document.getElementById("soPhut").value;
+    let TongTien = soPhut*1500;
+    document.getElementById("ketqua").innerHTML = "Tổng só tiền tháng này hộ gia dinhd bạn cần phải dóng là : <br/>" + TongTien +" VNĐ";
+  }
+</script>
+</html>

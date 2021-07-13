@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</title>
+</head>
+
+<body>
+<label >Nhập điểm bài kiểm tra : </label>
+<input type="text" id="1"><br><br>
+<label >Nhập điểm thi giữa kỳ : </label>
+<input type="text" id="2"><br><br>
+<label >Nhập điểm thi cuối kỳ: </label>
+<input type="text" id="3"><br><br>
+<p>Điểm xét hạng học lực = (Điểm bài kiểm * 1 + Điểm thi giữa kỳ * 2 + Điểm thi cuối kỳ *3)/6</p>
+<input type="button" value="Kiểm tra học lực" onclick="xethocluc()"><br><br>
+<div id="ketqua"></div>
+<script>
+  function xethocluc(){
+    let a = +document.getElementById("1").value;
+    let b = +document.getElementById("2").value;
+    let c = +document.getElementById("3").value;
+    if (a >= 0 && a <=10 && b >= 0 && b <=10 && c >= 0 && c <=10){
+      let tb = (a + b*2 + c*3)/6
+      if (tb > 8){
+        document.getElementById("ketqua").innerText = "Điểm xét học hạng học lực = "+tb+" > 8 : Đạt học lực giỏi";
+      }else if (tb > 6) {
+        document.getElementById("ketqua").innerText = "Điểm xét học hạng học lực = "+tb+" > 6 : Đạt học lực Khá";
+      }else{
+        document.getElementById("ketqua").innerText = "Điểm xét học hạng học lực = "+tb+" < 6 : Đạt học lực Trung bình";
+      }
+    }else {
+      document.getElementById("ketqua").innerText = "Vui Lòng Nhập lại !!";
+    }
+
+  }
+</script>
+</body>
+</html>

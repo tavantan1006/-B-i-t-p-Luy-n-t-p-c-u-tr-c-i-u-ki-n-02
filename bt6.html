@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</title>
+</head>
+<body>
+<label for="doanhso">Nhập doanh số bán hàng trong tháng : </label><br><br>
+<input type="text" id="doanhso"onkeypress="hoahong()">VNĐ<br>
+<p> Số tiền hoa hồng = 10% . Doanh số </p>
+<div id="ketqua">
+
+</div>
+<script>
+function hoahong(){
+  let hoahong = +document.getElementById("doanhso").value;
+  document.getElementById("ketqua").innerText = "Hoa hông tháng này của bạn là : "+(hoahong*0.1)+" VNĐ";
+}
+</script>
+</body>
+</html>
