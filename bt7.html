@@ -2,20 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</title>
+    <title>Giải phương trình bậc 2.</title>
 </head>
 <body>
-<label for="soPhut">Nhập số phút gọi trong tháng của gia đình bạn : </label><br><br>
-<input type="text" id="soPhut" onkeypress="tongtiencuocdienthoai()"> Phút<br>
-<p>Cước phí được tính = Số phút gọi * 1500 VNĐ/Phút</p>
-<br>
-<div id="ketqua"></div>
-</body>
+<form action="">
+  <label for="hesoA">Nhập hệ số a   : </label><br><br>
+  <input type="text" id="hesoA"><br><br>
+  <label for="hesoB">Nhập hệ số  b : </label><br><br>
+  <input type="text" id="hesoB">
+  <br><br>
+  <label for="hesoC">Nhập hệ số  c : </label><br><br>
+  <input type="text" id="hesoC">
+  <br><br>
+  <p>Δ=b2-4ac</p>
+  <br>
+  <input type="button" onclick="dTHv()" value="Kết quả ">
+</form>
+<br><p id="ketqua"></p>
 <script>
-  function tongtiencuocdienthoai(){
-    let soPhut = +document.getElementById("soPhut").value;
-    let TongTien = soPhut*1500;
-    document.getElementById("ketqua").innerHTML = "Tổng só tiền tháng này hộ gia dinhd bạn cần phải dóng là : <br/>" + TongTien +" VNĐ";
+  function dTHv (){
+    let a = document.getElementById("hesoA").value;
+    let b = document.getElementById("hesoB").value;
+    let c = document.getElementById("hesoC").value;
+    let tam = Math.pow(b,2) - 4*a*c;
+    if (tam < 0){
+      document.getElementById("ketqua").innerText = "Phương trình vô nghiệm ";
+    }else if (tam == 0){
+      document.getElementById("ketqua").innerText = "phương trình (1) có nghiệm kép x1 = x2 =-(b/2*a) =  "+(-b/2*a);
+    }else {
+      document.getElementById("ketqua").innerText = "X1 = "+((-b + Math.sqrt(tam))/(2*a))+" X2 = "+((-b - Math.sqrt(tam))/(2*a));
+    }
   }
+
 </script>
+</body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</title>
+</head>
+<body>
+<label for="tuoi">Nhập tuổi : </label><br><br>
+<input type="text" id="tuoi">
+<input type="button" value="kết quả" onclick="sosanh()">
+<br><br>
+
+<div id="ketqua">
+
+</div>
+<script>
+  function sosanh(){
+    let tuoi1 = +document.getElementById("tuoi").value;
+    if (tuoi1 > 120 || tuoi1 < 0){
+      document.getElementById("ketqua").innerText = "Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0. ";
+    }else {
+      document.getElementById("ketqua").innerText = "Là tuổi của một người";
+    }
+  }
+</script>
+</body>
+</html>

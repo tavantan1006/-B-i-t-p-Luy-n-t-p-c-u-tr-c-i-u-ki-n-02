@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</title>
+    <title>Chuyển từ mét sang feet:</title>
 </head>
 <body>
+<form action="">
+  <label for="met">Nhập độ Mét : </label>
+  <input type="text" id="met" onkeyup="Tfeet()">
+  <input type="reset">
+</form>
+<br><div id="ketqua"></div>
+</body>
 <script>
-  let tuoi = +prompt("Nhập số tuổi cần kiểm tra để đủ điều kiện vào lớp 10 : ");
-  if (tuoi < 15){
-    alert("Bạn không đủ tuổi để vào lớp 10 !");
-  }else {
-    alert("Bạn đủ tuổi nhập học lớp 10 !!")
+  function Tfeet(){
+    let Met= +document.getElementById("met").value;
+    let Feet = parseFloat(Met * 3.2808);
+    document.getElementById("ketqua").innerText = Feet + " Feet";
   }
-</script>
+  </script>
 </body>
 </html>

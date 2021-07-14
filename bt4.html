@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</title>
+    <title>Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</title>
 </head>
 <body>
+<form action="">
+  <label for="canhDai">Nhập cạnh hình chữ nhật cành dài a   : </label><br><br>
+  <input type="text" id="canhDai"><br><br>
+  <label for="canhRong">Nhập cạnh hình chữ nhật cành rộng b : </label><br><br>
+  <input type="text" id="canhRong">
+  <br><br>
+  <input type="button" onclick="dTHv()" value="Kết quả ">
+</form>
+<br><p id="ketqua"></p>
 <script>
-  let soNguyen1 = +prompt("Nhập số nguyên thứ 1 : ");
-  let soNguyen2 = +prompt("Nhập số nguyên thứ 2 : ");
-  let soNguyen3 = +prompt("Nhập số nguyên thứ 3 : ");
-  if (soNguyen1 > soNguyen2 && soNguyen1 > soNguyen3){
-    alert("Số nguyên thứ 1 : "+ soNguyen1 + " Là số lớn nhất được nhập vào trong 3 số !");
-  }else if (soNguyen2 > soNguyen3){
-    alert("Số nguyên thứ 2 : "+ soNguyen2 + " Là số lớn nhất được nhập vào trong 3 số !");
-  }else {
-    alert("Số nguyên thứ 3 : "+ soNguyen3 + " Là số lớn nhất được nhập vào trong 3 số !");
+  function dTHv (){
+    let cạnhDai1 = document.getElementById("canhDai").value;
+    let cạnhRong2 = document.getElementById("canhRong").value;
+    let Dt = cạnhDai1*cạnhRong2;
+    document.getElementById("ketqua").innerText = "Diện tích hình chữ nhật là : "+ Dt;
   }
 </script>
 </body>
-
 </html>

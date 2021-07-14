@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</title>
+    <title>Tính diện tích hình vuông khi biết cạnh a.</title>
 </head>
 <body>
+<form action="">
+  <label for="canhHV">Nhập cạnh hình vuông a : </label>
+  <input type="text" id="canhHV" onkeyup="dTHv()">
+  <input type="reset">
+</form>
+<br><p id="ketqua"></p>
 <script>
-  let soNguyen = +prompt("Nhập số nguyên bạn cần kiểm tra : ");
-  if (soNguyen > 0){
-    alert("Số đó > 0");
-  }else if (soNguyen < 0){
-    alert("Số đó < 0");
-  }else {
-    alert("Số đó = 0");
+  function dTHv (){
+    let canhHv = document.getElementById("canhHV").value;
+    document.getElementById("ketqua").innerText = "Diện tích hình vuông là : "+canhHv*canhHv;
   }
 </script>
 </body>

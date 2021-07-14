@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</title>
+    <title>Giải phương trình bậc 1.</title>
 </head>
 <body>
-<label for="doanhso">Nhập doanh số bán hàng trong tháng : </label><br><br>
-<input type="text" id="doanhso"onkeypress="hoahong()">VNĐ<br>
-<p> Số tiền hoa hồng = 10% . Doanh số </p>
-<div id="ketqua">
-
-</div>
+<form action="">
+  <label for="canhDai">Nhập hệ số a   : </label><br><br>
+  <input type="text" id="canhDai"><br><br>
+  <label for="canhRong">Nhập hệ số  b : </label><br><br>
+  <input type="text" id="canhRong">
+  <br><br>
+  <input type="button" onclick="dTHv()" value="Kết quả ">
+</form>
+<br><p id="ketqua"></p>
 <script>
-function hoahong(){
-  let hoahong = +document.getElementById("doanhso").value;
-  document.getElementById("ketqua").innerText = "Hoa hông tháng này của bạn là : "+(hoahong*0.1)+" VNĐ";
-}
+  function dTHv (){
+    let a = document.getElementById("canhDai").value;
+    let b = document.getElementById("canhRong").value;
+    if (a == 0){
+      document.getElementById("ketqua").innerText = "Phương trình vô nghiệm ";
+    }else{
+      document.getElementById("ketqua").innerHTML = "Phương trinh "+a+"X + "+b+" = 0 Có nghiệm là : <br> "+ "X = "+(-b/a);
+    }
+  }
 </script>
 </body>
 </html>

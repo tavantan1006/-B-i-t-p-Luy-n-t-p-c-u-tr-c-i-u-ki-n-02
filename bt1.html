@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</title>
+    <title> Chuyển từ độ C sang độ F.</title>
 </head>
 <body>
+<form action="">
+    <label for="doC">Nhập độ c : </label>
+    <input type="text" id="doC" onkeyup="doF()">
+    <input type="reset">
+</form>
+<br><p id="ketqua"></p>
+</body>
 <script>
-    let a = +prompt("Nhập số a : ");
-    let b = +prompt("Nhập số b : ");
-    if (a%b==0){
-        alert("Số : "+a+" Chia hết cho "+b);
-    }else {
-        alert("Số : "+a+" Không Chia hết cho "+b);
+    function doF(){
+        let C = +document.getElementById("doC").value;
+        let F = 9*C/5 + 32;
+        document.getElementById("ketqua").innerText = F + " oF";
     }
 </script>
-</body>
 </html>

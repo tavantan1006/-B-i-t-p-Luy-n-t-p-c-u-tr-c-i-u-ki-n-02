@@ -2,38 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</title>
+    <title>Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</title>
 </head>
-
 <body>
-<label >Nhập điểm bài kiểm tra : </label>
-<input type="text" id="1"><br><br>
-<label >Nhập điểm thi giữa kỳ : </label>
-<input type="text" id="2"><br><br>
-<label >Nhập điểm thi cuối kỳ: </label>
-<input type="text" id="3"><br><br>
-<p>Điểm xét hạng học lực = (Điểm bài kiểm * 1 + Điểm thi giữa kỳ * 2 + Điểm thi cuối kỳ *3)/6</p>
-<input type="button" value="Kiểm tra học lực" onclick="xethocluc()"><br><br>
-<div id="ketqua"></div>
+<form action="">
+  <label for="canhDai">Nhập cạnh kề a   : </label><br><br>
+  <input type="text" id="canhDai"><br><br>
+  <label for="canhRong">Nhập cạnh kề b : </label><br><br>
+  <input type="text" id="canhRong">
+  <br><br>
+  <input type="button" onclick="dTHv()" value="Kết quả ">
+</form>
+<br><p id="ketqua"></p>
 <script>
-  function xethocluc(){
-    let a = +document.getElementById("1").value;
-    let b = +document.getElementById("2").value;
-    let c = +document.getElementById("3").value;
-    if (a >= 0 && a <=10 && b >= 0 && b <=10 && c >= 0 && c <=10){
-      let tb = (a + b*2 + c*3)/6
-      if (tb > 8){
-        document.getElementById("ketqua").innerText = "Điểm xét học hạng học lực = "+tb+" > 8 : Đạt học lực giỏi";
-      }else if (tb > 6) {
-        document.getElementById("ketqua").innerText = "Điểm xét học hạng học lực = "+tb+" > 6 : Đạt học lực Khá";
-      }else{
-        document.getElementById("ketqua").innerText = "Điểm xét học hạng học lực = "+tb+" < 6 : Đạt học lực Trung bình";
-      }
-    }else {
-      document.getElementById("ketqua").innerText = "Vui Lòng Nhập lại !!";
-    }
-
+  function dTHv (){
+    let cạnhDai1 = document.getElementById("canhDai").value;
+    let cạnhRong2 = document.getElementById("canhRong").value;
+    let Dt = Math.sqrt(Math.pow(cạnhDai1,2)+Math.pow(cạnhRong2,2));
+    document.getElementById("ketqua").innerText = "Dộ dài cạnh dài tam giác vuông là : "+ Dt;
   }
 </script>
+
 </body>
 </html>

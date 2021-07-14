@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:</title>
+</head>
+<body>
+<form action="">
+  <label for="hesoA">Nhập số a   : </label><br><br>
+  <input type="text" id="hesoA"><br><br>
+  <label for="hesoB">Nhập số b : </label><br><br>
+  <input type="text" id="hesoB">
+  <br><br>
+  <label for="hesoC">Nhập số c : </label><br><br>
+  <input type="text" id="hesoC">
+  <br><br>
+  <p>Điều kiện 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác </p>
+  <p>a,b,c > 0</p>
+  <p>a + b > c</p>
+  <p>b + c > a</p>
+  <p>a + c > b</p>
+  <br>
+  <input type="button" onclick="dTHv()" value="Kết quả ">
+</form>
+<br><p id="ketqua"></p>
+<script>
+  function dTHv (){
+    let a = document.getElementById("hesoA").value;
+    let b = document.getElementById("hesoB").value;
+    let c = document.getElementById("hesoC").value;
+    let dk1 = a > 0 && b > 0 && c > 0;
+    let dk2 = (a+b)>c;
+    let dk3 = (b+c)>a;
+    let dk4 = (a+c)>b;
+    if (dk1 == true && dk2 == true && dk3 == true && dk4 == true){
+      document.getElementById("ketqua").innerText = "a , b , c Nhập vào là cạnh của 1 tam giác ";
+    }else {
+      document.getElementById("ketqua").innerText = "a , b , c Nhập vào là không đồng thời là cạnh của 1 tam giác ";
+    }
+  }
+
+</script>
+</body>
+</html>
